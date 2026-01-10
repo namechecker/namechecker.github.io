@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { checkDomain } from '$lib/checker/domain';
-	import { checkYouTube } from '$lib/checker/youtube';
 
 	type CheckResult = {
 		platform: string;
@@ -19,18 +18,7 @@
 			url: (id: string) => `${id}.com`,
 			icon: 'globe',
 			checkFn: checkDomain
-		},
-		{
-			name: 'YouTube',
-			url: (id: string) => `youtube.com/@${id}`,
-			icon: 'youtube',
-			checkFn: checkYouTube
-		},
-		{ name: 'GitHub', url: (id: string) => `github.com/${id}`, icon: 'github' },
-		{ name: 'Facebook', url: (id: string) => `facebook.com/${id}`, icon: 'facebook' },
-		{ name: 'Twitter/X', url: (id: string) => `twitter.com/${id}`, icon: 'twitter' },
-		{ name: 'Instagram', url: (id: string) => `instagram.com/${id}`, icon: 'instagram' },
-		{ name: 'LinkedIn', url: (id: string) => `linkedin.com/in/${id}`, icon: 'linkedin' }
+		}
 	];
 
 	async function handleCheck() {
@@ -180,11 +168,6 @@
 					<p class="mt-4 text-gray-600 dark:text-gray-400">Checking platforms...</p>
 				</div>
 			{/if}
-		</div>
-
-		<!-- Footer -->
-		<div class="text-center text-sm text-gray-500 dark:text-gray-400">
-			💡 Tip: Domain checks use public RDAP API
 		</div>
 	</div>
 </div>

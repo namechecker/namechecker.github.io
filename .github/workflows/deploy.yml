@@ -33,11 +33,11 @@ jobs:
 
       - name: Build with Dockerized Node
         run: |
-          docker run --rm \
-            -v "${{ github.workspace }}:/app" \
-            -w "/app" \
-            node:24 \
-            sh -c "npm install && npm run build"
+          docker buildx build -f Dockerfile.build \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --output type=local,dest=./build .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
