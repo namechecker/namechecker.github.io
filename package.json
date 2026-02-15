@@ -44,11 +44,6 @@
 	},
 	"dependencies": {
 		"luxon": "^3.7.2",
-		"@capacitor/android": "^7.4.3",
-		"@capacitor/camera": "^7.0.2",
-		"@capacitor/cli": "^7.4.3",
-		"@capacitor/core": "^7.4.3",
-		"@capacitor/local-notifications": "^7.0.3",
 		"uuid": "^13.0.0"
 	}
 }
